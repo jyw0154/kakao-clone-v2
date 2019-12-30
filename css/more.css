@@ -15,7 +15,7 @@
 }
 
 .more__btn .more__btn-title {
-  font-size: 14px;
+  font-size: 12px;
   margin-top: 15px;
 }
 
@@ -32,4 +32,18 @@
 .suggestion .suggestion__title {
   font-size: 12px;
   margin-top: 15px;
+}
+
+.suggestion .suggestion__icon {
+  background-color: #fce006;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.suggestion__icon i {
+  font-size: 28px;
+  color: white;
 }
