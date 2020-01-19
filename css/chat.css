@@ -1,5 +1,15 @@
+.header-wrapper {
+  position: fixed;
+  padding: 10px 0px;
+  background-color: white;
+  top: 0px;
+  width: 100%;
+}
+
 .chats-body {
-  padding: 0;
+  padding: 10px 0px;
+  padding-top: 100px;
+  min-height: 1000px;
 }
 
 .chats-body .header,
@@ -9,26 +19,57 @@
 
 .chat-screen {
   background-image: url("../images/chatBg.png");
-  min-height: 100vh;
+  min-height: 1000vh;
 }
 
-.chat__write {
+.chat__write--container {
   position: fixed;
-  bottom: 50px;
-  width: 80%;
+  bottom: 0px;
   display: flex;
+  justify-content: space-between;
   /* 가운데 정렬하는 방법 포지션이 fixed 일때*/
   margin: 0 auto;
   left: 0;
   right: 0;
-  justify-content: space-between;
   align-items: center;
   background-color: #fcfcfc;
   padding: 0px 20px;
-  border-radius: 40px;
   /* 수평 수직 블러 rgb obacity값*/
-  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
-    0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+  /* box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+    0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025); */
+}
+
+.chat__write {
+  bottom: 0px;
+  width: 100%;
+  border-radius: 0;
+  padding: 20px 60px;
+  width: 100%;
+  border: none;
+  font-size: 14px;
+}
+
+.chat__write:focus {
+  outline: none;
+  width: 80%;
+}
+
+.chat__icon {
+  font-size: 18px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.chat__write:focus ~ .chat__icon {
+  opacity: 0;
+}
+
+.chat__icon-left {
+  position: absolute;
+}
+
+.chat__icon-right {
+  position: absolute;
+  right: 10px;
 }
 
 .chat__write i {
@@ -41,14 +82,6 @@
 }
 
 .chat__write-column input {
-  padding: 10px;
-  width: 100%;
-  border: none;
-  font-size: 14px;
-}
-
-.chat__write-column input:focus {
-  outline: none;
 }
 
 .chat-screen .chat__messages {
@@ -56,6 +89,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   padding: 0px 20px;
   padding-top: 30px;
 }
@@ -74,12 +108,8 @@
 
 .message {
   display: flex;
-  align-items: center;
-  width: 50%;
-}
-
-.message .message__content {
-  width: 80%;
+  align-items: flex-start;
+  margin-bottom: 20px;
 }
 
 .incoming-message {
@@ -93,14 +123,34 @@
 .incoming-message img {
   width: 30px;
   border-radius: 15px;
-  margin-right: 20px;
+  margin-right: 15px;
 }
 
 .message .message__bubble {
   background-color: white;
+  display: block;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px,
     rgba(0, 0, 0, 0.024) 0px -6px 16px -6px;
   padding: 10px 20px;
   border-radius: 20px;
+  color: white;
+  font-weight: 600;
+}
+
+.incoming-message .message__author {
+  margin-top: 10px;
+  display: block;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.incoming-message .message__bubble {
+  border-bottom-left-radius: 0px;
+  background-image: linear-gradient(to right, #7b4397, #dc2430);
+}
+
+.sent-message .message__bubble {
+  border-bottom-right-radius: 0px;
+  background-image: linear-gradient(to left, #00c6ff, #0072ff);
 }
