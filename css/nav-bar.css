@@ -36,3 +36,19 @@
   align-items: center;
   border-radius: 50%;
 }
+
+@keyframes showNavBar {
+  from {
+    transform: translateY(80px);
+  }
+  to {
+    transform: none;
+  }
+}
+
+.nav {
+  /* 스크린 창이 전환 될 때의 애니메이션이 자연스러운 적용위함! */
+  transform: translateY(80px);
+  animation: showNavBar 0.5s ease-in-out forwards;
+  animation-delay: 0.5s;
+}
